@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Pinterest's Technology Stack</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<center>
+<h1>Pinterest's Technology Stack</h1>
+</center>
+
+<hr />
+
+<p>Pinterest is a social media/virtual pinboard site founded by Paul Sciarra, Evan Sharp, and Ben Silberman in 2010. Users are able to organize images, links, and other media in visual collections based on an infinite number of interests.</p>
+
+			<p>Pinterest runs on the Tornado web server, which is a non-blocking web server. This allows requests to the server to be carried out in succession without waiting for one transmission to finish. Because Pinterest is fast moving as users 'pin' a variety of media in a matter of seconds, implementing Tornado's asynchronous input/output processing is a smart and beneficial decision. For select circumstances, node.js is also used.</p>
+
+			<p>Nginx is also used for static delivery and load balancing. Like Tornado, this event driven HTTP server is able to serve more requests per second while using less resources, which is important in maintaining the heavy request load of Pinterest's many users. HAProxy and Varnish, an HTTP accelerator, are also used for load balancing. These help manage the content-heavy and high-traffic website.</p>
+
+			<p>At the application layer, Pinterest is written in Python. The Python-based web application framework Django is also used as a base, but is heavily modified and customized.</p>
+
+			<p>For object-caching Pinterest uses memcached. This memory caching system reduces the number of times an external data source must be accessed, which significantly speeds up dynamic websites. Because Pinterest pulls its resources from external databases, memcached stores data and objects in RAM in order to keep the users' experience quick and easy.</p>
+
+<p>Membase and Redis are used for logical-caching. Again, these technologies focus on keeping Pinterest running smoothly and quickly by storing, retrieving, and presenting data to the website's huge number of concurrent users.</p>
+
+			<p>Pinterest uses RabbitMQ as its message queue. RabbitMQ is a message-oriented middleware which uses an advanced message queue protocol. Because it uses asynchronous message passing, the message queues provide temporary storage  when the destination program is busy.  RabbitHQ also makes it easier to handle messages from heterogeneous operating systems. This accommodates Pinterest's varied user base by allowing Windows, Mac, and Linux users to send requests and messages to the website without issue based on operating system.</p>
+
+			<p>The relational database management system MySQL is used to store user information on the server. This persistent data storage keeps user information safe when they don't need it and makes it easily accessible when they do. An advantage to using a relational database to store information instead of cookies (on the client side) or files (on the server side) is, yet again, the amount of time it takes to retrieve information. Databases are also split when they reach 50% capacity, providing sufficient IO capacity and allowing easy growth.</p>
+
+			<p>MRJob on Elastic Map Reduce is Pinterest's map-reduce system used to handle huge amounts of data from many distributed computers.</p>
+
+			<p>Git is used as version control.</p>
+
+			<p>Overall, the focus of Pinterest's technology stack is accommodation for a huge amount of users and data, and the speed and efficiency required to serve these users seamlessly. Most of the technology is used either for keeping the website moving quickly or making sure it can handle the large amounts of data.</p>
+            
+            <hr />
+            
+<p><b>References:</b>
+
+<p> <a href="https://www.pinterest.com">https://www.pinterest.com</a>
+            
+<p> <a href="http://www.quora.com/What-is-the-technology-stack-behind-Pinterest-1">http://www.quora.com/What-is-the-technology-stack-behind-Pinterest-1</a>
+
+<p> <a href="http://highscalability.com/blog/2013/4/15/scaling-pinterest-from-0-to-10s-of-billions-of-page-views-a.html">http://highscalability.com/blog/2013/4/15/scaling-pinterest-from-0-to-10s-of-billions-of-page-views-a.html</p>
+
+</body>
+</html>
