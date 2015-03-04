@@ -1,0 +1,4 @@
+IP address: 104.236.228.185
+Domains: wulfeku3.crabdance.com and wulfeku4.crabdance.com
+
+As of submitting this, the site for wulfeku3 works correctly, but wulfeku4 only shows the default Apache 'it works!' page. My hope is that the DNS simply hasn't propagated yet--otherwise, I'm not sure what's wrong. I did the exact same process for both of my subdomains so I don't know why only one is working at the moment.
